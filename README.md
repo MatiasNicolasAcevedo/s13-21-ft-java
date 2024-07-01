@@ -463,7 +463,6 @@
    <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/420b3a1d-aeba-40ee-9cbb-7136de198a3a" alt="mini" width="680" height="1165">
 </div>
 
-   <div align='center'>
   <br>
 
 <div align='center'>
