@@ -1,0 +1,3 @@
+# SDKMAN: `sdk env install` en la raíz instala y activa este JDK.
+# ⚠️ Identificador no verificado contra la API de SDKMAN (bloqueada en el entorno del bootstrap): si falla, `sdk list java` y elegí un Temurin 17.
+java=17.0.20.1-tem
