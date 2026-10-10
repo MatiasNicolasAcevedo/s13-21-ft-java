@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 COPY . .
-# URL del back que el front debería usar. Hoy el código la ignora (URL hardcodeada): ver docs/tasks/T-002.
+# URL del back que el front debería usar. Hoy el código la ignora (URL hardcodeada): ver docs/tasks/T-004.
 ARG VITE_API_URL=http://localhost:8080
 ENV VITE_API_URL=${VITE_API_URL}
 RUN npm run build

@@ -2,7 +2,7 @@
 _Actualizado: 2026-10-10 · por: 🧠 Claude Code · sesión: auditoría (T-000)_
 
 ## En una línea
-Bootstrap en curso: **PC1** alcanzado (auditoría en borrador, rama y PR draft creados).
+Bootstrap en curso: **PC3** alcanzado (auditoría, contenedores, `.example`, scripts, README y docs estables).
 
 ## Próximo paso exacto
-- Seguir T-000 desde el PC1: Fase 2 → completar `docs/audits/2026-10-10-initial.md`.
+- Seguir T-000 desde el PC3: tablero (`docs/BACKLOG.md`), tareas `docs/tasks/`, protocolos `docs/agents/` → PC4.

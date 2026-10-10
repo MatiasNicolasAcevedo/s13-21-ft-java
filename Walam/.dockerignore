@@ -33,3 +33,10 @@ nbdist
 ### VS Code ###
 **/.vscode
 fly.toml
+
+# Configuración local real
+.env
+.env.*
+!.env.example
+.verify-logs
+.dev-logs

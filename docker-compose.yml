@@ -43,7 +43,7 @@ services:
       context: ./Walam_Front
       dockerfile: Dockerfile
       args:
-        # Hoy el front ignora esta variable (URL hardcodeada a producción): ver docs/tasks/T-002.
+        # Hoy el front ignora esta variable (URL hardcodeada a producción): ver docs/tasks/T-004.
         VITE_API_URL: http://localhost:8080
     ports:
       - "5173:80"
