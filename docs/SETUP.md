@@ -1,6 +1,6 @@
 # Setup detallado
 
-Lo que no entra en el [README](../README.md) (no lo repite).
+Lo que no entra en el [README](../README.md) (no lo repite). Lo marcado con † no se ejecutó en el bootstrap (2026-10-10): confirmalo al usarlo y sacá la marca.
 
 ## Variables de entorno
 
@@ -15,15 +15,15 @@ Lo que no entra en el [README](../README.md) (no lo repite).
 
 `Walam/.env` lo carga **spring-dotenv** desde el **directorio de trabajo** del proceso (no desde el classpath): correr `./mvnw` dentro de `Walam/`. Las variables de entorno del sistema tienen prioridad sobre el `.env`. En contenedores, `docker-compose.yml` las pasa directamente.
 
-## Correr sin Docker
+## Correr sin Docker †
 Necesitás un PostgreSQL 14+ propio: creá la base y el usuario (`createdb walam`, etc.) y ajustá `DB_URL`, `DB_USERNAME` y `DB_PASSWORD` en `Walam/.env`. El resto es igual a la opción B del README.
 
 ## Puertos
 | Servicio | Puerto | Cómo cambiarlo |
 |---|---|---|
 | PostgreSQL | 5432 | `DB_PORT=5433 docker compose up -d --wait` + `DB_URL` con `:5433` |
-| Back | 8080 | `cd Walam && ./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=8081` (y `VITE_API_URL`) |
-| Front (Vite) | 5173 | `npm run dev -- --port 5174` |
+| Back | 8080 | † `cd Walam && ./mvnw spring-boot:run -Dspring-boot.run.arguments=--server.port=8081` (y `VITE_API_URL`) |
+| Front (Vite) | 5173 | † `npm run dev -- --port 5174` |
 | Front (compose) | 5173 → 80 (nginx) | editar `ports` del servicio `client` |
 
 ## IDE
@@ -31,7 +31,7 @@ Necesitás un PostgreSQL 14+ propio: creá la base y el usuario (`createdb walam
 - **VS Code:** extensiones "Extension Pack for Java", "Spring Boot Extension Pack", "ESLint", "Tailwind CSS IntelliSense".
 
 ## Debugging
-- Back: `cd Walam && ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"` y "Attach to remote JVM" en el puerto 5005.
+- † Back: `cd Walam && ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"` y "Attach to remote JVM" en el puerto 5005.
 - SQL: poner `spring.jpa.show-sql: true` solo localmente (no commitear).
 - Front: React DevTools + pestaña Network (fijate a qué host van las llamadas).
 

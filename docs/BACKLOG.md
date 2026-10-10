@@ -6,7 +6,7 @@
 > Próximo ID libre: T-018
 
 ## 🔨 En curso / en revisión (con su PR)
-- T-000 · P0 · L · 🧠 frontera · Bootstrap the agent harness and audit the project → [tarea](tasks/T-000-agent-bootstrap.md) · PR #1
+- (vacío)
 
 ## ✅ Listas (cola en orden de ejecución, máx. 10)
 1. T-001 · P0 · M · 🧠 frontera · Move hardcoded secrets to environment configuration → [tarea](tasks/T-001-externalize-secrets.md)
@@ -59,4 +59,4 @@
 - 👤 Licencia (MIT sugerida), demo online verificada, capturas y GIF nuevos, badges
 
 ## 🏁 Hecho reciente (máx. 10)
-- (vacío)
+- T-000 · P0 · L · 🧠 frontera · Bootstrap the agent harness and audit the project → [tarea](tasks/T-000-agent-bootstrap.md) · PR #1 (esperando merge del 👤)
