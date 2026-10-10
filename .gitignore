@@ -18,3 +18,6 @@
 ### Harness ###
 .verify-logs/
 .dev-logs/
+
+### Claude Code (local) ###
+.claude/settings.local.json

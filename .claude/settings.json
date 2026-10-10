@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./scripts/verify.sh:*)",
+      "Bash(./scripts/dev.sh --down)",
+      "Bash(docker compose up -d --wait:*)",
+      "Bash(docker compose ps:*)",
+      "Bash(./mvnw -B clean verify:*)",
+      "Bash(./mvnw -B test:*)",
+      "Bash(./mvnw test:*)",
+      "Bash(npm ci:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm test:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(git push origin develop:*)",
+      "Bash(git push origin main:*)",
+      "Read(./Walam/.env)",
+      "Read(./Walam_Front/.env.local)",
+      "Read(./**/.env)"
+    ]
+  }
+}
