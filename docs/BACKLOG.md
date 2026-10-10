@@ -36,7 +36,9 @@
 - 🤖 Validar `RegisterRequest` (`@Valid`, `@NotBlank`, `@Email`) y devolver 409 si el usuario existe
 - 🧠 Errores con `ProblemDetail` en `GlobalExceptionHandler` (404 de transacción inexistente, 409, 400 de JSON inválido)
 - 🧠 Usuario demo seed para el perfil local (hoy lo crea `scripts/dev.sh` por API)
+- 🤖 `docker-compose.yml:6` fija `name: walam`: documentar en SETUP que dos clones comparten contenedores/volumen (o usar `COMPOSE_PROJECT_NAME`)
 ### P1 Actualizar
+- 🤖 Fijar las GitHub Actions a SHA en vez de tags móviles (`.github/workflows/pr-title.yml:17`), junto con T-013
 - 🧠 Spring Boot 3.2 → 3.5 con OpenRewrite ([ADR 0002](adr/0002-upgrade-path.md)), luego Java 21 y Boot 4 (tareas separadas)
 - 🧠 Node 24 + Vite 8 + React 19 + ESLint flat config (un paso por PR)
 - 🤖 `npm audit fix` sin `--force` y revisar lo que quede
@@ -59,4 +61,4 @@
 - 👤 Licencia (MIT sugerida), demo online verificada, capturas y GIF nuevos, badges
 
 ## 🏁 Hecho reciente (máx. 10)
-- T-000 · P0 · L · 🧠 frontera · Bootstrap the agent harness and audit the project → [tarea](tasks/T-000-agent-bootstrap.md) · PR #1 (esperando merge del 👤)
+- T-000 · P0 · L · 🧠 frontera · Bootstrap the agent harness and audit the project → [tarea](tasks/T-000-agent-bootstrap.md) · PR #1 (mergeado 2026-10-10)

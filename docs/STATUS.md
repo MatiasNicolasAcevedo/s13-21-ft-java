@@ -17,12 +17,12 @@ Bootstrap terminado: el proyecto compila, corre en contenedores y tiene harness 
 | Última auditoría | 2026-10-10 | [inicial](audits/2026-10-10-initial.md) |
 
 ## Fase actual
-P0 Estabilizar · 0/17 tareas · ver [ROADMAP](ROADMAP.md)
+P0 Estabilizar · 0/17 tareas (T-001…T-017; T-000 cerrada) · ver [ROADMAP](ROADMAP.md)
 
 ## Foco
-- PR abierto (máx. 1): #1 T-000 (esperando revisión y merge del 👤)
-- **Próximo paso:** revisar y mergear PR #1 · **ejecuta: 👤 dueño** · después T-001 · Move hardcoded secrets to environment configuration · **ejecuta: 🧠 modelo de frontera**
-- **Qué hacer:** GitHub → PR #1 → "Squash and merge"; después abrí una **sesión nueva de Claude Code** y escribí: «Seguí `docs/agents/implementer.md`»
+- PR abierto (máx. 1): ninguno (PR #1 de T-000 mergeado)
+- **Próximo paso:** T-001 · Move hardcoded secrets to environment configuration · **ejecuta: 🧠 modelo de frontera**
+- **Qué hacer:** abrí una **sesión nueva de Claude Code** y escribí: «Seguí `docs/agents/implementer.md`»
 - **Después:** T-002 (🧠) → T-003 (🤖) → T-004 (🤖) _(cambio de agente: de 🧠 a 🤖 en T-003)_
 - **En paralelo, ya:** T-015 pasos 1–2 (👤, revocar la app password de Gmail y restringir la key de Firebase)
 
@@ -31,7 +31,7 @@ P0 Estabilizar · 0/17 tareas · ver [ROADMAP](ROADMAP.md)
 - Licencia del repo (MIT sugerida) y crédito al equipo de No Country
 - ¿Siguen vivos Render/Vercel y quién controla Gmail/Firebase? (T-015)
 - ¿Mantener login con Google (Firebase) y 2FA, o quitarlos? (Backlog P2)
-- Después del merge de PR #1: `git tag audit/2026-10-10 origin/develop && git push origin audit/2026-10-10`
 
 ## Últimas sesiones
+- 2026-10-10 · 🧠 sub-agente revisor · revisó PR #1 (T-000) · APROBADO, sin bloqueantes · mergeado con squash; tag `audit/2026-10-10`
 - 2026-10-10 · 🧠 Claude Code · auditó y montó el harness (T-000) · verify ❌ (lint front) · PR #1
