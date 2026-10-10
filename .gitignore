@@ -6,3 +6,18 @@
 
 ### VS CODE ###
 .vscode/
+
+### Configuración local real (los .example sí se commitean) ###
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+### Harness ###
+.verify-logs/
+.dev-logs/
+
+### Claude Code (local) ###
+.claude/settings.local.json

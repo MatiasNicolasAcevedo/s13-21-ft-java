@@ -1,477 +1,225 @@
-  <h1 align="center">💳 Equipo s13-21-ft-java | No Country 🌎</h1>
- 
-  <!-- PROJECT LOGO -->
-  <div align='center'>
-    <a href="https://s13-21-ft-java.vercel.app/" target="_blank">
-      <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/6f72c4c5-a7a4-4aad-bf74-0ab1a15364d0" alt="Banner">
-    </a>
-  </div>
+<h1 align="center">💸 EcoPay · Billetera digital ecológica ♻</h1>
 
-<br>
-  <h1 align='center'>💸 Billetera Digital Ecológica ♻</h1>
-    <p align='center'>ECOPAY es mucho más que una simple billetera virtual. Es una innovadora solución diseñada con el medio ambiente en mente. 💚 Con el objetivo de simplificar las transacciones financieras y reducir nuestra huella de carbono, ECOPAY se destaca por su enfoque ecológico y sus características orientadas a la sostenibilidad. 🌱</p>
+<p align="center">
+  Billetera virtual full stack (Spring Boot + React) creada por el equipo <b>s13-21-ft-java</b> de <a href="https://www.nocountry.tech/">No Country</a>.<br>
+  <a href="https://s13-21-ft-java.vercel.app/">Demo</a> ·
+  <a href="https://drive.google.com/file/d/1muqouh6NgJBvyqeK7ocU4OD4Qa_R5T6V/view?usp=sharing">Video</a> ·
+  <a href="https://www.figma.com/file/JqeVizlLMPgJSF8Hi4iWQM/s13-21-ft-Java-Dise%C3%B1o?type=design&node-id=85-733&mode=design&t=MAb1QJJkOiGGJMGP-0">Figma</a> ·
+  <a href="docs/STATUS.md">Estado</a>
+</p>
 
+<p align="center">
+  <img alt="Java 17" src="https://img.shields.io/badge/Java-17-orange">
+  <img alt="Spring Boot 3.2" src="https://img.shields.io/badge/Spring%20Boot-3.2-6DB33F">
+  <img alt="React 18" src="https://img.shields.io/badge/React-18-61DAFB">
+  <img alt="PostgreSQL 17" src="https://img.shields.io/badge/PostgreSQL-17-336791">
+  <!-- Badges de CI y cobertura: se agregan con T-007 y T-006. Licencia: decisión pendiente del dueño. -->
+</p>
 
-  <div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/21e7136e-a1ce-412b-8943-4ef2f563556c" alt="mini" width="679" height="425">
-  </div>
+<p align="center">
+  <a href="https://s13-21-ft-java.vercel.app/"><img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/6f72c4c5-a7a4-4aad-bf74-0ab1a15364d0" alt="Banner de EcoPay" width="720"></a>
+</p>
 
-<br>
-<div align='center'>
-  <h2>🚀 Funcionalidades Principales 🚀</h2>
-</div>
+> ⚠️ **Estado:** el proyecto se está retomando para dejarlo como pieza de portfolio. Hay problemas de seguridad conocidos en curso de corrección (ver [docs/STATUS.md](docs/STATUS.md)). No uses datos reales.
 
-<div align='center'>
-  <dl style='padding-left: 17rem;'>  
-    <dd>
-      🔹Billetera virtual diseñada pensando en la ecología y el medio ambiente.
-      </dd>
-    <dd>
-      🔹Ayuda a la disminución del consumo de papel, plástico y energía.
-      </dd>
-      <dd>
-      🔹Interfaz de usuario minimalista y fácil de usar.
-      </dd>
-    <dd>
-      🔹Transacciones Financieras: Depósitos, Transferencias y Extracciones.
-      </dd>
-    <dd>
-      🔹Visualiza un historial detallado de todas tus transacciones.
-      </dd>
-    <dd>
-      🔹Consulta el valor actual de diferentes monedas.
-      </dd>
-    <dd>
-      🔹Incluye una tarjeta virtual para realizar pagos de manera segura.
-      </dd>
-    <dd>
-      🔹Tecnología de cifrado avanzada para proteger tus datos y transacciones.
-      </dd>
-    <dd>
-      🔹Integración con servicios, sostenibilidad y el cuidado del medio ambiente.
-      </dd>
-  </dl>
-</div>
+## Qué es
 
-<br>
-<div align='center'>
-  <h2>🎨 Diseño 🎨</h2>
-</div>
+EcoPay es una billetera virtual pensada para reducir el uso de papel, plástico y efectivo: registro e inicio de sesión, depósitos, extracciones, transferencias entre cuentas, historial de movimientos, tarjeta virtual y donaciones a ONG ambientales.
 
-<div align='center'>
-  <b>🌈 Diseño en Figma 🖌️:</b>
-    <a href="https://www.figma.com/file/JqeVizlLMPgJSF8Hi4iWQM/s13-21-ft-Java-Dise%C3%B1o?type=design&node-id=85-733&mode=design&t=MAb1QJJkOiGGJMGP-0" target="_blank">[ Link al Diseño Figma ]</a>
+| Feature | Estado |
+|---|---|
+| Registro e inicio de sesión con JWT | ✅ |
+| Depósito, extracción y transferencia por número de cuenta | ✅ |
+| Historial de movimientos y detalle | ✅ |
+| Tarjeta virtual | 🟡 parcial |
+| Donaciones (extracción hacia ONG) | 🟡 parcial |
+| Recuperar contraseña, login con Google, divisas, soporte | 🚧 en progreso ([ROADMAP](docs/ROADMAP.md)) |
 
-  <b>🌟 Prototype 💡:</b>
-    <a href="https://www.figma.com/proto/JqeVizlLMPgJSF8Hi4iWQM/s13-21-ft-Java-Dise%C3%B1o?node-id=1166-989&scaling=scale-down
-" target="_blank">[ Link al Prototype ]</a>
-</div>
+| Escritorio | Mobile |
+|---|---|
+| ![Inicio en escritorio](docs/images/home-desktop.png) | ![Inicio en mobile](docs/images/home-mobile.png) |
+| ![Dashboard](docs/images/dashboard-desktop.png) | ![Login en mobile](docs/images/login-mobile.png) |
 
-<br>
- <div align='center'>
-  <h2> 🎬 Video Demostración ▶ </h2>
-</div>
+## Stack
 
- <div align='center'>
-  <a href="https://drive.google.com/file/d/1muqouh6NgJBvyqeK7ocU4OD4Qa_R5T6V/view?usp=sharing" target="_blank" rel="noopener">
-    <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/c6f98483-fe6e-47e3-befc-c13f6516abc1" alt="mini" width="460" height="280" >
-  </a>
-</div>
+| Parte | Tecnologías |
+|---|---|
+| Back (`Walam/`) | Java 17, Spring Boot 3.2.2 (Web, Data JPA, Security, Validation, Mail, Thymeleaf), JWT (jjwt 0.12.5), PostgreSQL, Lombok, MapStruct, springdoc-openapi 2.3.0, Maven Wrapper |
+| Front (`Walam_Front/`) | React 18.2, Vite 5, React Router 6, Tailwind CSS 3, axios, Formik + Yup, Firebase |
+| Infra local | Docker Compose: PostgreSQL 17, back y front en contenedores |
 
-<br>
-<h2 align='center'>✨ Equipo ✨</h2>
+Arquitectura, modelo de datos y endpoints: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/leandrofrossi" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/108770954?v=4"/>
-        </a>
-        <a href="https://github.com/leandrofrossi" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Leandro Rossi</br><small>Front-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/leandrofrossi" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/Natsumychan" target="_blank" rel="author">
-            <img width="110" src="https://avatars.githubusercontent.com/u/94393112?v=4"/>
-        </a>
-        <a href="https://github.com/Natsumychan" target="_blank" rel="author">
-            <h4 style="margin-top: 1rem;">Diana Castaño</br><small>Front-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/Natsumychan" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/JornabeDV" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/103864663?s=400&u=c15958417e895daefc6bdc014da615b1ff78ea3a&v=4"/>
-        </a>
-        <a href="https://github.com/JornabeDV" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Jorge Beja</br><small>Front-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/JornabeDV" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/patinoricar" target="_blank" rel="author">
-          <img width="110" src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/dac5bda3-8e46-4201-b1c0-6cd476ded16c"/>
-        </a>
-        <a href="https://github.com/patinoricar" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Ricar Patiño</br><small>Front-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/patinoricar" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+## Levantar el proyecto en local
 
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/MatiasNicolasAcevedo" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/109118183?v=4"/>
-        </a>
-        <a href="https://github.com/MatiasNicolasAcevedo" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Matias Acevedo</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/MatiasNicolasAcevedo" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/Full-Juan-Ortega" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/91577323?v=4"/>
-        </a>
-        <a href="https://github.com/Full-Juan-Ortega" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Juan Ortega</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/Full-Juan-Ortega" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/valeday" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/129791003?v=4"/>
-        </a>
-        <a href="https://github.com/valeday" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Valerie Ramos</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/valeday" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/DDarioBenitez" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/129878552?v=4"/>
-        </a>
-        <a href="https://github.com/DDarioBenitez" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Dario Benitez</br><small>Back-End</small></h4>
-        </a>
-          <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/DDarioBenitez" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+### Prerrequisitos
 
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/joshuaFrias95" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/71472790?v=4"/>
-        </a>
-        <a href="https://github.com/joshuaFrias95" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Joshua Frias</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/joshuaFrias95" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/josuejs23" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/86853211?v=4"/>
-        </a>
-        <a href="https://github.com/josuejs23" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Josue Zorrilla </br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/josuejs23" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/leosirx" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/114456192?v=4"/>
-        </a>
-        <a href="https://github.com/leosirx" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Leonardo Cortés</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/leosirx" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/enzogsierra" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/18339620?v=4"/>
-        </a>
-        <a href="https://github.com/enzogsierra" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Enzo Sierra</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/enzogsierra" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+| Herramienta | Versión | Cómo comprobarla | Cómo instalarla |
+|---|---|---|---|
+| Git | cualquiera | `git --version` | https://git-scm.com/downloads |
+| Docker + Compose | Docker 24+ con Compose v2 | `docker compose version` | https://docs.docker.com/get-docker/ |
+| JDK (solo opción B) | 17 (también funciona con 21) | `java -version` | [SDKMAN](https://sdkman.io/): `sdk env install` en la raíz (lee `.sdkmanrc`) |
+| Node.js (solo opción B) | 22 (lee `.nvmrc`) | `node -v` | [nvm](https://github.com/nvm-sh/nvm): `nvm install` en la raíz |
 
-<table align='center'>
-  <tr>
-    <td align='center'>
-      <div>
-        <a href="https://github.com/JAPMagdaleno" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/121467694?v=4"/>
-        </a>
-        <a href="https://github.com/JAPMagdaleno" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Alejandro Pacheco</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://github.com/JAPMagdaleno" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/f55014d5-6116-400d-81ce-f20c5a9c67d0"/>
-        </a>
-        <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Diego Gonzalez</br><small>UX-UI</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/diego-gonzalez-7937aa16/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://www.linkedin.com/in/yuliriverosortiz/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/218b2d90-2045-4bbd-93c1-2e637cc49f5a"/>
-        </a>
-        <a href="https://www.linkedin.com/in/yuliriverosortiz/" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Yuli Riveros</br><small>UX-UI</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/yuliriverosortiz/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-    <td align='center'>
-      <div>
-        <a href="https://www.linkedin.com/in/ariadna-menendez/" target="_blank" rel="author">
-          <img width="110" src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/331c5be5-f44b-4a46-8964-f80e69906a1d"/>
-        </a>
-        <a href="https://www.linkedin.com/in/ariadna-menendez/" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Ariadna Menendez</br><small>Testing</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-          <a href="https://www.linkedin.com/in/ariadna-menendez/" target="_blank">
-            <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white="/>
-          </a>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
+Para la **opción A** alcanza con Git y Docker.
 
-<br>
+### Configurar variables de entorno
 
-<div align='center'>
-  <h2> 🖼 Capturas de pantalla 📷 </h2>
-</div>
+Cada parte tiene un archivo de ejemplo **commiteado**; el archivo real está en `.gitignore`. **Los valores de ejemplo sirven tal cual para local** (coinciden con `docker-compose.yml`).
 
-<div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/28937f04-7c8e-4e8e-aa78-018a2753eeed" alt="mini" width="679" height="385">
-</div>
+| Archivo de ejemplo | Copiar a | Quién lo lee | Qué contiene |
+|---|---|---|---|
+| `Walam/.env.example` | `Walam/.env` | back (spring-dotenv, desde el directorio `Walam/`) | `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` |
+| `Walam_Front/.env.example` | `Walam_Front/.env.local` | front (Vite) | `VITE_API_URL` (⚠️ hoy el código no la usa: [T-004](docs/tasks/T-004-api-base-url-from-env.md)) |
 
-<div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/84e451a9-4b2d-4977-b7c7-569354dec836" alt="mini" width="679" height="385">
-</div>
+Desde la raíz del repo:
 
-<div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/8c86cc5c-dc47-4966-9adc-ba6d81b12ab5" alt="mini" width="679" height="385">
-</div>
+```bash
+cp Walam/.env.example Walam/.env
+```
 
-<div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/2ce442b0-da9e-4bd7-8ac6-38bca09abcea" alt="mini" width="679" height="385">
-</div>
+```bash
+cp Walam_Front/.env.example Walam_Front/.env.local
+```
 
-<br>
+En producción hay que definir en el proveedor (Render): `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` (y, cuando termine [T-001](docs/tasks/T-001-externalize-secrets.md), las del JWT y el mail). Detalle de cada variable: [docs/SETUP.md](docs/SETUP.md).
 
-<div align='center'>
-  <h2>🛠️ Tecnologías Utilizadas ⚡</h2>
-</div>
+### Opción A · Todo en contenedores (la más simple)
 
-<div align='center'>
-  <h2>Frontend</h2>
-  </div>
+Desde la raíz del repo:
 
-  <div align='center'>
-    
-![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![AXIOS](https://img.shields.io/badge/AXIOS-%235A29E4?style=for-the-badge&logo=axios)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Formik](https://img.shields.io/badge/FORMIK-172B4D?style=for-the-badge)
-![YUP](https://img.shields.io/badge/YUP-000?style=for-the-badge)
-![Vercel](https://img.shields.io/static/v1?style=for-the-badge&message=Vercel&color=000000&logo=Vercel&logoColor=FFFFFF&label=)
+```bash
+docker compose --profile app up -d --build --wait
+```
 
-  </div>
+**Resultado esperado:** `Container walam-db-1 Healthy`, `walam-server-1` y `walam-client-1` `Started`/`Healthy`. El back tarda ~20 s en responder:
 
-<div align='center'>
-  <h2>Backend</h2>
-  </div>
-  
-  <div align='center'>
-    
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) 
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
-![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) 
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/v3/api-docs
+```
 
-  </div>
+**Resultado esperado:** `200`. Front en http://localhost:5173 · Swagger en http://localhost:8080/swagger-ui/index.html.
 
-<div align='center'>
-  <h2> Organización </h2>
-  </div>
+Apagar y borrar los datos:
 
-  <div align='center'>
-      <a href='https://figma.com/'>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Logo" width="60" height="60">
-      </a>
-      <a href='https://slack.com/'>
-       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Logo" width="60" height="60">
-      </a>
-      <a href='https://www.discord.gg/'>
-        <img src="https://img.icons8.com/color/480/discord-new-logo.png" alt="Logo" width="70" height="65">
-      </a>
-       <a href='https://trello.com/'>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-original.svg" alt="Logo" width="60" height="60">
-      </a>
-</div>
+```bash
+docker compose --profile app down -v
+```
 
-<br>
-<br>
+### Opción B · Desarrollo (DB en contenedor, back y front locales)
 
-<div align='center'>
- <dd>
-    🔸 <b>Postman Collection:</b>
-    <a href="https://drive.google.com/file/d/1V16jwVYbMnqIDw6iH2M6pC28MOALSR4A/view?usp=drive_link" target="_blank">[ Link a Google Drive ]</a>
-   </dd>
-    <dd>
-      <b>Instrucciones:</b> Descargar el archivo. Abrir Postman. <br> Ir a File -> Import -> Seleccionar el archivo descargado. 
-   </dd>
-   </div>
-   
-   <br>
+**Inicio rápido** (hace los pasos 3 a 7 y crea el usuario demo; `Ctrl+C` corta back y front):
 
-<div align='center'>
-  <h2> Swagger </h2>
-  </div>
+```bash
+./scripts/dev.sh
+```
 
-  <div align='center'>
-   <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/420b3a1d-aeba-40ee-9cbb-7136de198a3a" alt="mini" width="680" height="1165">
-</div>
+**Paso a paso:**
 
-  <br>
+1. **Clonar.**
+   ```bash
+   git clone https://github.com/MatiasNicolasAcevedo/s13-21-ft-java.git
+   ```
+   ```bash
+   cd s13-21-ft-java
+   ```
+   Resultado esperado: carpetas `Walam/` y `Walam_Front/`.
+2. **Fijar versiones de Java y Node** (si usás SDKMAN y nvm; si no, alcanza con JDK 17+ y Node 22).
+   ```bash
+   sdk env install
+   ```
+   ```bash
+   nvm install
+   ```
+   Resultado esperado: `java -version` muestra 17 y `node -v` muestra v22.
+3. **Copiar los `.example`** (ver la sección anterior). Resultado esperado: existen `Walam/.env` y `Walam_Front/.env.local`.
+4. **Levantar la DB.**
+   ```bash
+   docker compose up -d --wait
+   ```
+   Resultado esperado: `Container walam-db-1 Healthy`.
+5. **Levantar el back** (deja la terminal ocupada; abrí otra para los pasos siguientes).
+   ```bash
+   cd Walam && ./mvnw spring-boot:run
+   ```
+   Chequeo, desde otra terminal:
+   ```bash
+   curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/v3/api-docs
+   ```
+   Resultado esperado: `200` (tarda ~20 s la primera vez).
+6. **Levantar el front** (otra terminal, desde la raíz).
+   ```bash
+   cd Walam_Front && npm ci && npm run dev
+   ```
+   Resultado esperado: `Local: http://localhost:5173/`. ⚠️ **Hoy falla la conexión con el back local:** el front llama a la API de producción hasta que se complete [T-004](docs/tasks/T-004-api-base-url-from-env.md).
+7. **Crear el usuario de prueba e iniciar sesión** (no hay datos seed y la base se recrea en cada arranque del back).
+   ```bash
+   curl -s -X POST http://localhost:8080/auth/register -H 'Content-Type: application/json' -d '{"username":"demo","password":"Demo1234!","email":"demo@example.com"}'
+   ```
+   ```bash
+   curl -s -X POST http://localhost:8080/auth/login -H 'Content-Type: application/json' -d '{"username":"demo","password":"Demo1234!"}'
+   ```
+   Resultado esperado: ambos devuelven `{"token":"eyJ..."}`.
+8. **Verificar todo** (build + lint + tests).
+   ```bash
+   ./scripts/verify.sh
+   ```
+   Resultado esperado: `Resumen: server: ✅ build ✅ tests (...) · client: ✅ lint ✅ build ...`. ⚠️ **Hoy falla el lint del front:** ver [T-003](docs/tasks/T-003-fix-frontend-lint.md).
+9. **Apagar y limpiar.** `Ctrl+C` en las terminales del back y del front, y después:
+   ```bash
+   docker compose down -v
+   ```
+   Resultado esperado: `Container walam-db-1 Removed` y `Volume walam_walam-db Removed`.
 
-<div align='center'>
-  <h2> Diagramas </h2>
-  </div>
+### Windows
 
-<div align='center'>
-<br>
-<a href="https://ibb.co/wp8Fhw7"><img src="https://i.ibb.co/tYnTpxz/ingenieria-inversa-der.png" alt="ingenieria-inversa-der" border="0"></a><br />
-  
-  <br>
-  <dd>
-    🔸 <b>Draw.io:</b>
-    <a href="https://drive.google.com/file/d/1F_qXfrsFEWTUob3Hx7nafSsru8PtKZfG/view?usp=sharing" target="_blank">[ Link a Drive ]</a>
-    <a href="https://app.diagrams.net/#G1F_qXfrsFEWTUob3Hx7nafSsru8PtKZfG" target="_blank">[ Link Draw.io ]</a>
-   </dd>
-    </div>
+- Usá **Git Bash** o **WSL** para los `.sh`; en PowerShell/CMD el back se levanta con `cd Walam` y `mvnw.cmd spring-boot:run`.
+- Copiar archivos en CMD: `copy Walam\.env.example Walam\.env` y `copy Walam_Front\.env.example Walam_Front\.env.local`.
+- Antes de clonar: `git config --global core.autocrlf input` (el repo usa LF; `.gitattributes` lo fuerza).
 
-<br>
+### Problemas frecuentes
 
-<div align='center'>
-  <h2> 🎆 Agradecimientos 🎇 </h2>
-</div>
+| Síntoma | Causa | Solución |
+|---|---|---|
+| `./mvnw: Permission denied` | clon viejo sin el bit de ejecución | `chmod +x Walam/mvnw` o `sh mvnw ...` |
+| `URL must start with 'jdbc'` al arrancar o testear el back | falta `Walam/.env` o corriste `./mvnw` fuera de `Walam/` | copiá el `.example` y corré desde `Walam/` |
+| `Connection refused` a `localhost:5432` | la DB no está arriba | `docker compose up -d --wait` |
+| `port is already allocated` (5432) | hay otro Postgres local | `DB_PORT=5433 docker compose up -d --wait` y en `Walam/.env` usá `localhost:5433` |
+| Puerto 8080 o 5173 ocupado | otro proceso | cerralo o ver "Puertos" en [docs/SETUP.md](docs/SETUP.md) |
+| El front muestra datos de otro lado / "Cargando información..." | el front apunta a producción | conocido: [T-004](docs/tasks/T-004-api-base-url-from-env.md) |
+| Errores devuelven `403` en vez de `400/401/404` | `/error` bloqueado por Spring Security | conocido: [T-002](docs/tasks/T-002-lock-down-api.md) |
+| Los usuarios desaparecen al reiniciar el back | `ddl-auto: create` recrea el esquema | conocido: [T-011](docs/tasks/T-011-flyway-baseline.md); volvé a registrar el demo |
+| `toomanyrequests` al bajar imágenes de Docker | límite anónimo de Docker Hub | `docker login` o reintentar más tarde |
 
-<div align='center'>
-  <a href="https://www.nocountry.tech/" target="_blank" rel="noopener">
-    <img src="https://github.com/MatiasNicolasAcevedo/s13-21-ft-java/assets/109118183/c360f832-5983-4437-bbc7-7a4afe659302" alt="mini" width="343" height="193">
-  </a>
-</div>
+Verificado el 2026-10-10 en Ubuntu 24.04 con Java 21.0.12 (y 17.0.20 en contenedor), Node 22.22.0, Docker 29.8.2 / Compose 5.6.0. La opción A se verificó con imágenes construidas desde estos `Dockerfile`s (el proxy del entorno de verificación exigió inyectar su CA; ver la auditoría).
 
+## Tests y calidad
+
+```bash
+./scripts/verify.sh
+```
+
+Opciones `--server` y `--client`; los logs quedan en `.verify-logs/`. Hoy hay 1 test de back (cobertura de línea 11 %) y ninguno de front. Estrategia, convenciones y cómo correr un solo test: [docs/TESTING.md](docs/TESTING.md).
+
+## Cómo se trabaja
+
+GitHub Flow con Conventional Commits y un PR por tarea: [CONTRIBUTING.md](CONTRIBUTING.md). El repo está preparado para desarrollo asistido por agentes ([AGENTS.md](AGENTS.md)): 🤖 el agente gratuito de IntelliJ para tareas chicas y 🧠 un modelo de frontera para lo complejo, con el tablero en [docs/BACKLOG.md](docs/BACKLOG.md).
+
+## Estado y roadmap
+
+[docs/STATUS.md](docs/STATUS.md) · [docs/ROADMAP.md](docs/ROADMAP.md) · [Auditoría inicial](docs/audits/2026-10-10-initial.md)
+
+Recursos originales del equipo: [prototipo en Figma](https://www.figma.com/proto/JqeVizlLMPgJSF8Hi4iWQM/s13-21-ft-Java-Dise%C3%B1o?node-id=1166-989&scaling=scale-down) · [colección de Postman](https://drive.google.com/file/d/1V16jwVYbMnqIDw6iH2M6pC28MOALSR4A/view?usp=drive_link) · [DER](https://i.ibb.co/tYnTpxz/ingenieria-inversa-der.png) · [diagrama en draw.io](https://app.diagrams.net/#G1F_qXfrsFEWTUob3Hx7nafSsru8PtKZfG).
+
+## Equipo y licencia
+
+Hecho en No Country (cohorte s13-21, 2024) por:
+
+| Rol | Integrantes |
+|---|---|
+| Back-End | [Matias Acevedo](https://github.com/MatiasNicolasAcevedo) (mantenedor), [Juan Ortega](https://github.com/Full-Juan-Ortega), [Valerie Ramos](https://github.com/valeday), [Dario Benitez](https://github.com/DDarioBenitez), [Joshua Frias](https://github.com/joshuaFrias95), [Josue Zorrilla](https://github.com/josuejs23), [Leonardo Cortés](https://github.com/leosirx), [Enzo Sierra](https://github.com/enzogsierra), [Alejandro Pacheco](https://github.com/JAPMagdaleno) |
+| Front-End | [Leandro Rossi](https://github.com/leandrofrossi), [Diana Castaño](https://github.com/Natsumychan), [Jorge Beja](https://github.com/JornabeDV), [Ricar Patiño](https://github.com/patinoricar) |
+| UX/UI | [Diego Gonzalez](https://www.linkedin.com/in/diego-gonzalez-7937aa16/), [Yuli Riveros](https://www.linkedin.com/in/yuliriverosortiz/) |
+| Testing | [Ariadna Menendez](https://www.linkedin.com/in/ariadna-menendez/) |
+
+Licencia: pendiente de definir por el dueño del repo (ver [docs/STATUS.md](docs/STATUS.md)).

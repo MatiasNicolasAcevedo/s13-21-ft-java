@@ -1,0 +1,54 @@
+# Entorno local de Walam / EcoPay. Credenciales SOLO para desarrollo local.
+#   Solo la DB:          docker compose up -d --wait
+#   App completa:        docker compose --profile app up -d --build
+#   Apagar y borrar:     docker compose --profile app down -v
+# Los valores coinciden con Walam/.env.example (ver README.md → "Levantar el proyecto en local").
+name: walam
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: walam
+      POSTGRES_USER: walam
+      POSTGRES_PASSWORD: walam_local_pw
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - walam-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U walam -d walam"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  server:
+    profiles: ["app"]
+    build:
+      context: ./Walam
+      dockerfile: Dockerfile
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/walam
+      DB_USERNAME: walam
+      DB_PASSWORD: walam_local_pw
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  client:
+    profiles: ["app"]
+    build:
+      context: ./Walam_Front
+      dockerfile: Dockerfile
+      args:
+        # Hoy el front ignora esta variable (URL hardcodeada a producción): ver docs/tasks/T-004.
+        VITE_API_URL: http://localhost:8080
+    ports:
+      - "5173:80"
+    depends_on:
+      - server
+
+volumes:
+  walam-db:
