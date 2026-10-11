@@ -3,10 +3,10 @@
 > si la primera no te corresponde (🧠 o 👤), no saltees a la siguiente: avisá con el formato de "Traspasos" y terminá ·
 > las 👤 que no bloquean nada van al final de "Listas" con "(no bloquea la cola)" ·
 > formato: `- T-NNN · Pn · S/M/L · 🤖 gratuito|🧠 frontera|👤 dueño · Título → [tarea](tasks/T-NNN-slug.md)`
-> Próximo ID libre: T-018
+> Próximo ID libre: T-019
 
 ## 🔨 En curso / en revisión (con su PR)
-- (vacío)
+- T-018 · P0 · M · 🧠 frontera · Clarify agent roles and session handoffs → [tarea](tasks/T-018-agent-workflow.md) · PR draft pendiente (pedido documental del dueño antes de T-001)
 
 ## ✅ Listas (cola en orden de ejecución, máx. 10)
 1. T-001 · P0 · M · 🧠 frontera · Move hardcoded secrets to environment configuration → [tarea](tasks/T-001-externalize-secrets.md)
