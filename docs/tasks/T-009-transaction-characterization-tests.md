@@ -1,8 +1,18 @@
 # T-009 · Add characterization tests for deposit, withdraw and transfer
-- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 agente gratuito
+- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `test/T-009-transaction-characterization-tests` (desde `develop` actualizado) · Depende de: T-006 · Spec/ADR: —
 - Revisa: 🧠 modelo de frontera (esfuerzo M)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-009.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-009-transaction-characterization-tests.md. Rama exacta: test/T-009-transaction-characterization-tests.
+Confirmá que no haya PR de tarea abierto y que T-009 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 Flujos críticos 4–6 de la auditoría (§6.7) sin tests: `TransactionServiceImpl.deposit`, `withdraw`, `transferToAccount` (`Walam/src/main/java/org/nocountry/walam/main/service/impl/TransactionServiceImpl.java:57-128`). Hay que fijar el comportamiento antes de migrar versiones o cambiar a `BigDecimal`.

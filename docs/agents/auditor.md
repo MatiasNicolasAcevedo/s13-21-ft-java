@@ -7,7 +7,7 @@
 
 ## 1. Situación
 - Leé `docs/STATUS.md`, `docs/BACKLOG.md`, `docs/ROADMAP.md` y la última auditoría en `docs/audits/`.
-- Cambios desde la auditoría anterior: `git log --oneline audit/<fecha-anterior>..develop` (la primera vez: desde el merge de T-000).
+- Cambios desde la auditoría anterior: confirmá primero el tag remoto (`git ls-remote --tags origin audit/<fecha-anterior>`). Si existe, traelo y usá `git log --oneline audit/<fecha-anterior>..develop`; si falta, usá el commit de merge confirmado de la auditoría anterior (la primera: T-000 / PR #1). No asumas que `audit/2026-10-10` existe.
 - PR mergeados y sus revisiones: `gh pr list --state merged --limit 20` + `gh pr view <N> --comments`.
 
 ## 2. Trabajo de los agentes
@@ -34,8 +34,11 @@
 - `docs/audits/AAAA-MM-DD-periodic.md` (resumen con semáforo, hallazgos con evidencia, decisiones, cambios de cola).
 - `docs/STATUS.md` (fila "Última auditoría") y archivo (`docs/archive/`) de lo viejo.
 - PR listo; después del merge, el 👤 (o vos si te lo pide): `git tag audit/AAAA-MM-DD origin/develop && git push origin audit/AAAA-MM-DD`.
+- Antes del cierre o de una compactación, persistí notas, documentación y cambios propios con commit/push y verificá árbol limpio. El estado posterior al merge lo incorpora la siguiente tarea en su primer commit; ningún traspaso de revisión deja documentación local pendiente.
 - Sugerí sesión nueva.
 
-## 6. Respuesta final (máx. 5 líneas) + traspaso
+## 6. Respuesta final y traspaso
 > **Próximo paso:** revisar y mergear PR #N (auditoría) · **ejecuta: 👤 dueño** · luego T-NNN · **ejecuta:** <🤖 | 🧠>
-> **Qué hacer:** GitHub → PR #N; después abrí <chat nuevo del agente de IntelliJ | sesión nueva de Claude Code> y escribí: «Seguí `docs/agents/implementer.md`»
+> **Qué hacer:** GitHub → PR #N; después abrí <sesión nueva de Junie Lite en Air | sesión nueva con un modelo de frontera> y escribí: «Seguí `docs/agents/implementer.md`»
+
+Si la próxima tarea es Lite, agregá el prompt completo con datos reales de [implementer §11](implementer.md#11-respuesta-final-y-traspaso); indicá que se usa después del merge y que la nueva implementación concilia el cierre de la auditoría en su primer commit.

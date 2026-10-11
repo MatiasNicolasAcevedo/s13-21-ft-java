@@ -1,6 +1,6 @@
 # Cómo contribuir
 
-Vale para personas y agentes (🧠 modelo de frontera, 🤖 agente gratuito de IntelliJ, 👤 dueño). Ver también [AGENTS.md](AGENTS.md).
+Vale para personas y agentes (🧠 modelo de frontera, 🤖 Junie Lite (Free, JetBrains Air), 👤 dueño). Ver también [AGENTS.md](AGENTS.md).
 
 ## 1. Ramas (GitHub Flow)
 - La rama por defecto es **`develop`** y está siempre en verde. Nadie commitea directo a `develop`.
@@ -31,15 +31,22 @@ Atómicos. `!` y `BREAKING CHANGE:` para cambios incompatibles. Prohibido: "wip"
 ## 4. Revisión (sesión nueva, con [docs/agents/reviewer.md](docs/agents/reviewer.md))
 | PR | Implementa | Revisa | Quién lanza la revisión |
 |---|---|---|---|
-| Tarea 🤖 S, sin riesgo | 🤖 agente gratuito | 🤖 agente gratuito, **chat nuevo** | 👤 abre el chat nuevo |
-| Tarea 🤖 M, o que toca back y front, seguridad, datos, configuración o CI | 🤖 agente gratuito | 🧠 modelo de frontera | 👤 abre una sesión de frontera |
+| Tarea 🤖 S, sin riesgo | 🤖 Junie Lite | 🤖 Junie Lite, **chat nuevo** | 👤 abre el chat nuevo |
+| Tarea 🤖 M, o que toca back y front, seguridad, datos, configuración o CI | 🤖 Junie Lite | 🧠 modelo de frontera | 👤 abre una sesión de frontera |
 | Tarea 🧠 | 🧠 modelo de frontera | 🧠 sesión nueva o sub-agente (si el 👤 lo pide) + 👤 | 👤 |
 | Dependabot | bot | 🤖; versión mayor → tarea 🧠 | 👤 |
 
 La tarea dice en "Revisa" quién revisa; la respuesta final de quien implementó dice qué abrir y qué escribir. Máximo **2 rondas**; después se escala a 🧠 o al 👤. Sin cuenta bot, la revisión es un **comentario** con veredicto explícito: `APROBADO` / `CAMBIOS REQUERIDOS` / `ESCALAR A 🧠/DUEÑO`.
 
+🤖 = **Junie Lite (Free) en JetBrains Air**; 🧠 = **modelo de frontera**, p. ej. GPT 6.1 Sol u Opus 5.5 según disponibilidad. El traspaso identifica tarea/PR, ejecutor y acción; si va a Lite, incluye un prompt completo para copiar. No se asume que Lite carezca de `gh` o MCP: comprobá las herramientas de la sesión.
+
 ## 5. Merge
 Squash, con CI en verde (mientras no haya CI: `verify.sh` sin regresiones respecto de `develop`) y revisión aprobada. Lo hace el 👤, o el 🧠 solo si el 👤 se lo pidió explícitamente para ese PR. Después se borra la rama.
+
+La tarea permanece **En revisión** hasta el merge. La documentación posterior al merge (Hecha, tablero, STATUS, dependencias y hallazgos del revisor) se incorpora al inicio de la siguiente tarea, en el primer commit de su nueva rama. El revisor entrega el traspaso sin modificaciones locales pendientes.
+
+## 5b. Persistencia antes de cerrar o cambiar de contexto
+Revisá diff y archivos nuevos, commiteá documentación y código propios con `Refs: T-NNN`, hacé push y comprobá `git status --short` vacío y sincronización con upstream. Identificá cambios ajenos existentes al inicio; no los borres ni los incluyas sin autorización. Si falta commit/push, reportá la causa y los archivos: la sesión todavía no está cerrada. La allowlist personal de Junie queda fuera de Git.
 
 ## 6. Protección de la rama por defecto
 Pasos exactos en [T-016](docs/tasks/T-016-protect-default-branch.md) (👤).

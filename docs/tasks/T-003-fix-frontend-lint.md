@@ -1,8 +1,18 @@
 # T-003 · Fix frontend lint errors so verify passes
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `fix/T-003-frontend-lint` (desde `develop` actualizado) · Depende de: — · Spec/ADR: —
-- Revisa: 🤖 agente gratuito (chat nuevo)
+- Revisa: 🤖 Junie Lite (chat nuevo)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-003.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-003-fix-frontend-lint.md. Rama exacta: fix/T-003-frontend-lint.
+Confirmá que no haya PR de tarea abierto y que T-003 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 `npm run lint` falla con 64 problemas (62 errores, 2 warnings; el script usa `--max-warnings 0`), así que `./scripts/verify.sh --client` está en rojo. 53 son `react/prop-types`. Auditoría §6.10.
