@@ -1,8 +1,18 @@
 # T-004 · Read the API base URL from VITE_API_URL (shared client, part 1)
-- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 agente gratuito
+- Estado: Lista · Prioridad: P0 · Esfuerzo: M · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `refactor/T-004-api-base-url-from-env` (desde `develop` actualizado) · Depende de: T-003 · Spec/ADR: —
 - Revisa: 🧠 modelo de frontera (toca configuración)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-004.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-004-api-base-url-from-env.md. Rama exacta: refactor/T-004-api-base-url-from-env.
+Confirmá que no haya PR de tarea abierto y que T-004 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 El front llama siempre a producción: `https://s13-21-ft-java.onrender.com` está hardcodeado en 15 llamadas de 13 archivos (`grep -rn onrender Walam_Front/src`). No se puede desarrollar ni testear contra el back local. Auditoría §6.4.

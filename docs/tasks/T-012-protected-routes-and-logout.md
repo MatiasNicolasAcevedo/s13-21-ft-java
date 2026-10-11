@@ -1,8 +1,18 @@
 # T-012 · Protect private routes and clear the session on logout
-- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
+- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `fix/T-012-protected-routes-and-logout` (desde `develop` actualizado) · Depende de: T-008 · Spec/ADR: —
 - Revisa: 🧠 modelo de frontera (toca autenticación)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-012.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-012-protected-routes-and-logout.md. Rama exacta: fix/T-012-protected-routes-and-logout.
+Confirmá que no haya PR de tarea abierto y que T-012 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 `/DashboardUser` y el resto de las rutas privadas se abren sin login (auditoría §6.5: `Walam_Front/src/Router/index.jsx:56-64`). "Cerrar sesión" es solo un link a `/` y no borra el token (`src/components/Navbar/LinkMenu.jsx:55`).

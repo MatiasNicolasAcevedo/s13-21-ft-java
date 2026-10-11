@@ -1,8 +1,18 @@
 # T-005 · Remove unused frontend dependencies
-- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
+- Estado: Lista · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `chore/T-005-remove-unused-frontend-deps` (desde `develop` actualizado) · Depende de: T-003 · Spec/ADR: —
-- Revisa: 🤖 agente gratuito (chat nuevo)
+- Revisa: 🤖 Junie Lite (chat nuevo)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-005.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-005-remove-unused-frontend-deps.md. Rama exacta: chore/T-005-remove-unused-frontend-deps.
+Confirmá que no haya PR de tarea abierto y que T-005 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 Dependencias sin ningún import en `src/` (auditoría §6.2): `dom`, `router` (con vulnerabilidad alta), `json-server` en `dependencies`; `standard`, `eslint-config-airbnb`, `eslint-config-standard` en `devDependencies` (no figuran en `.eslintrc.cjs`). Suman superficie de ataque y ruido en `npm audit`.

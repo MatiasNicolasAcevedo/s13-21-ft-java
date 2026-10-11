@@ -12,13 +12,17 @@ EcoPay (código: Walam): billetera virtual de un hackathon de No Country, retoma
 
 | Ícono | Ejecutor | Hace |
 |---|---|---|
-| 🧠 | **Modelo de frontera** (Claude Code u otro potente) | seguridad, infra de tests/CI/contenedores, arquitectura, migraciones, specs y tareas, revisiones riesgosas, auditorías |
-| 🤖 | **Agente gratuito** de IntelliJ IDEA (Qwen) | tareas chicas y bien especificadas, de a una, con tests; revisiones de PRs chicos |
+| 🧠 | **Modelo de frontera** (p. ej. GPT 6.1 Sol u Opus 5.5, según disponibilidad) | seguridad, infra de tests/CI/contenedores, arquitectura, migraciones, specs y tareas, revisiones riesgosas, auditorías |
+| 🤖 | **Junie Lite (Free)** en IntelliJ IDEA mediante [JetBrains Air](https://plugins.jetbrains.com/plugin/33314-air) | tareas chicas y bien especificadas, de a una, con tests; revisiones de PRs chicos |
 | 👤 | **Dueño** | decide, configura GitHub, rota secretos, mergea, **cambia de agente** |
 
-Ningún agente lanza a otro. Si el próximo paso es de otro ejecutor, terminá con un **traspaso**:
-> **Próximo paso:** T-NNN · <título> · **ejecuta: 🤖 agente gratuito (IntelliJ)** | **🧠 modelo de frontera** | **👤 dueño**
-> **Qué hacer:** abrí <chat nuevo del agente de IntelliJ | una sesión nueva de Claude Code | GitHub → …> y escribí: «Seguí `docs/agents/implementer.md`»
+Los íconos identifican la capacidad requerida, no una marca de herramienta. 🧠 puede trabajar en Codex, Claude Code o Air con el modelo elegido por el dueño; 🤖 significa siempre Junie Lite (Free). No fijes el flujo al modelo interno de Lite ni asumas un tamaño de contexto o herramientas disponibles: ver [SETUP](docs/SETUP.md#junie-lite-free-en-jetbrains-air-).
+
+Ningún agente lanza a otro, salvo revisión con sub-agente pedida explícitamente por el dueño para ese PR. Si el próximo paso es de otro ejecutor, terminá con un **traspaso**:
+> **Próximo paso:** T-NNN · <título> · **ejecuta: 🤖 Junie Lite (Free, JetBrains Air)** | **🧠 modelo de frontera** | **👤 dueño**
+> **Qué hacer:** abrí <sesión nueva de Junie Lite en Air | una sesión nueva con un modelo de frontera | GitHub → …> y escribí: «Seguí `docs/agents/implementer.md`»
+
+**Todo traspaso a Lite incluye un bloque de texto completo para copiar**, con tarea, archivo, rama, PR si existe, protocolo y acción concreta. Usá el formato de [implementer §11](docs/agents/implementer.md#11-respuesta-final-y-traspaso) o [reviewer §7](docs/agents/reviewer.md#7-respuesta-final-y-traspaso); reemplazá todos los placeholders. No basta con indicar qué archivo leer.
 
 ## 2. Stack (versiones reales)
 Back: Java 17 (compila y testea también con 21), Spring Boot 3.2.2, Spring Security + jjwt 0.12.5, Data JPA/Hibernate (`ddl-auto: create`), PostgreSQL 17 (local), Lombok, MapStruct 1.5.5, springdoc 2.3.0, Maven Wrapper 3.9.5. Front: React 18.2, Vite 5, JavaScript (sin TS), React Router 6, Tailwind 3, axios, Formik + Yup, ESLint 8. Node 22 (`.nvmrc`).
@@ -40,15 +44,17 @@ Back: Java 17 (compila y testea también con 21), Spring Boot 3.2.2, Spring Secu
 2. **Una tarea por sesión y una a la vez:** si hay un PR de tarea abierto, no empieces otra.
 3. Tomá **siempre la primera** de "Listas". Si no te corresponde (🧠 o 👤), avisá con el traspaso y terminá.
 4. **Antes del primer commit**, creá la rama con el nombre exacto de la tarea; PR draft enseguida.
-5. Tests en el mismo PR. Al terminar: `./scripts/verify.sh` sin regresiones, tablero/tarea/STATUS actualizados, PR listo y sugerí sesión nueva.
+5. Tests en el mismo PR. Al terminar: `./scripts/verify.sh` sin regresiones, tablero/tarea/STATUS actualizados, PR listo y sugerí sesión nueva. Una tarea terminada de implementar queda **En revisión** hasta el merge.
+6. **Documentación posterior al merge:** al iniciar la siguiente tarea, quien implementa confirma el merge anterior y actualiza tarea/tablero/STATUS en el primer commit de la nueva rama. El revisor entrega veredicto y traspaso en su respuesta o en GitHub; **no edita documentación local para registrar un merge o la siguiente tarea**.
+7. **Sin cambios olvidados:** registrá `git status --short` al inicio; antes de cerrar, traspasar o compactar, revisá diff y archivos nuevos, commiteá los cambios propios (incluida documentación), hacé push y confirmá árbol limpio y rama sincronizada. No uses `git add .` a ciegas ni borres cambios ajenos. Si hay cambios previos, identificá su dueño y reportalos; si commit/push está bloqueado, informá archivos y causa y dejá el cierre como pendiente.
 Detalle: [implementer](docs/agents/implementer.md) · [reviewer](docs/agents/reviewer.md) · [auditor](docs/agents/auditor.md) (solo 🧠).
 
 ## 5. Gestión de contexto
 1. **Una tarea = una sesión.** Al cerrar una tarea, revisión o auditoría, sugerí una sesión nueva (mejor que compactar).
-2. Sugerí compactar **solo a mitad de un trabajo largo** y si: cerraste una sub-etapa; hay logs/archivos que ya no sirven; el contexto pasa ~60 % (🧠) o ~50 % (🤖); o notás degradación (releer archivos, olvidar decisiones, repetir intentos).
-3. **Antes, persistí:** "Notas de implementación" de la tarea (hecho / pendiente / próximo paso), commit y push.
-4. 🧠: `/compact Conservar: tarea T-NNN, rama y PR, decisiones, archivos modificados, estado de verify y próximo paso. Descartar: logs y contenido de archivos ya procesados.` + «después escribime "seguí con T-NNN"». 🤖 (sin `/compact`): «abrí un chat nuevo y escribí: Seguí `docs/agents/implementer.md` (retomando T-NNN)».
-5. No compactes justo antes de terminar ni entre tareas.
+2. **Cuándo:** solo mientras sigue abierta la misma tarea larga, al cerrar una sub-etapa segura y si el contexto se acerca a ~60 % (🧠) o ~50 % (🤖), o notás degradación (releer, repetir intentos, olvidar decisiones). Son umbrales orientativos si la herramienta muestra el uso; no inventes porcentajes. Tener logs viejos por sí solo no exige compactar.
+3. **Antes de continuar:** completá "Notas de implementación" con tarea, rama, PR, commit, hecho, decisiones, comandos/resultados de verificación, limitaciones, pendientes y siguiente acción; commit, push y comprobación de árbol limpio. Si no podés persistirlo, explicitá el bloqueo antes del cambio de contexto.
+4. **Cómo:** si la herramienta ofrece compactación, usá su acción documentada. `/compact` es un ejemplo para Claude Code; no asumas ese comando en Codex o Air. Conservá tarea, rama/PR, decisiones, verificación y siguiente acción. Descartá logs y contenido ya procesado. Si no ofrece compactación, abrí una sesión nueva con un prompt de reanudación completo (Lite: [implementer §7](docs/agents/implementer.md#7-contexto-largo)). Abrir una sesión nueva **no conserva** la conversación anterior por sí solo.
+5. **Después:** continuá la misma tarea; releé AGENTS, el protocolo y las notas, verificá rama/PR/commit y retomá el pendiente. No tomes la siguiente de la cola. Al cerrar una tarea/revisión/auditoría, o cambiar de ejecutor, abrí sesión nueva; no compactes justo antes de terminar ni para encadenar tareas.
 6. Higiene: salida acotada (`| tail -n 40`, logs a archivo + `grep`); grep/glob antes de abrir; leé por rangos; no abras `package-lock.json`, `target/`, `node_modules/`, `dist/`, `.verify-logs/` ni `docs/archive/`.
 
 ## 6. Configuración
@@ -58,6 +64,13 @@ Detalle: [implementer](docs/agents/implementer.md) · [reviewer](docs/agents/rev
 | `Walam/.env.example` | `Walam/.env` | spring-dotenv, desde el directorio de trabajo (`Walam/`) |
 | `Walam_Front/.env.example` | `Walam_Front/.env.local` | Vite (`VITE_*`) |
 Si agregás o renombrás una variable: actualizá en el **mismo PR** su `.example` (con comentario y valor local válido), `docker-compose.yml`, `docs/SETUP.md` y el README si cambia un paso. Nunca valores reales.
+
+### Permisos de comandos y allowlist personal
+Por pedido del dueño, **cada comando que el agente consulte y el dueño apruebe explícitamente** se registra en `C:\Users\matia\.junie\allowlist.json`. La aprobación del comando autoriza persistir ese mismo alcance para Junie; no autoriza comandos más amplios. Ver [SETUP](docs/SETUP.md#permisos-y-allowlist-personal-de-junie).
+- Leé el JSON existente y respetá su esquema; verificá si la regla ya cubre el comando, evitá duplicados y agregá una coincidencia exacta o la forma más acotada que admita la versión instalada.
+- Conservá todas las reglas y opciones existentes; validá el JSON y revisá el diff antes de guardar. No agregues comentarios JSON ni permisos globales, prefijos amplios o comodines a partir de una aprobación puntual.
+- Si la interfaz permite guardar el permiso aprobado, usala; si el esquema no permite representarlo con precisión, entregá la instrucción para la interfaz. Si escribir está bloqueado, informalo y dejá explícito qué comando falta persistir. No cambies otros archivos de permisos para sortearlo.
+- La allowlist es personal, fuera del repo: no se commitea ni reemplaza los permisos de Codex/Claude u otro entorno. Las aprobaciones automáticas de una herramienta no equivalen a una aprobación explícita del dueño.
 
 ## 7. Mapa de documentación
 | Archivo | Qué contiene | Cuándo leerlo |

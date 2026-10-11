@@ -1,8 +1,18 @@
 # T-010 · Add characterization tests for registration and login
-- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 agente gratuito
+- Estado: Bloqueada · Prioridad: P0 · Esfuerzo: S · Ejecuta: 🤖 Junie Lite
 - Fase: P0 Estabilizar
 - Rama: `test/T-010-auth-characterization-tests` (desde `develop` actualizado) · Depende de: T-006 · Spec/ADR: —
 - Revisa: 🧠 modelo de frontera (toca seguridad)
+
+## Prompt de arranque para Junie Lite (usar cuando sea la primera de Listas)
+```text
+Leé AGENTS.md y seguí docs/agents/implementer.md para implementar T-010.
+Ejecutor: Junie Lite (Free) en JetBrains Air.
+Contrato: docs/tasks/T-010-auth-characterization-tests.md. Rama exacta: test/T-010-auth-characterization-tests.
+Confirmá que no haya PR de tarea abierto y que T-010 sea la primera de Listas; si no, entregá el traspaso correcto y detenete.
+Confirmá el merge anterior y conciliá su documentación en el primer commit de esta nueva rama.
+Al cerrar o cambiar de contexto, persistí notas, commiteá y publicá todos los cambios propios y comprobá árbol limpio.
+```
 
 ## Por qué
 Flujos críticos 1–3 de la auditoría (§6.7): registro (usuario + cuenta + CVU + alias) y login (`Walam/src/main/java/org/nocountry/walam/main/auth/service/AuthService.java:43-100`). T-006 deja solo el camino feliz.

@@ -18,4 +18,6 @@ T-NNN · <título> → docs/tasks/T-NNN-slug.md
 - [ ] `.example` y docs actualizados si cambió alguna variable de configuración
 - [ ] Sin tests borrados, deshabilitados ni debilitados
 - [ ] Tablero, tarea y STATUS actualizados en este PR
+- [ ] Tarea En revisión; STATUS indica revisión inmediata y tarea/ejecutor después del merge
 - [ ] Docs actualizadas si cambió algo de README/AGENTS/SETUP/ARCHITECTURE/TESTING
+- [ ] Cambios propios (incluida documentación) commiteados y publicados; árbol limpio
